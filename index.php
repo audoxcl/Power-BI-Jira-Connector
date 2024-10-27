@@ -7,16 +7,12 @@
 * email: info@audox.com
 ######################### */
 
-function writeLog($content){
-	file_put_contents("log.txt", "\n".date("Y-m-d H:i:s: ").print_r($content, true), FILE_APPEND);
-}
-
 function auth($headers) {
     $headers = array_change_key_case($headers);
     list($type, $authorization) = explode(" ", $headers["authorization"]);
 
     $valid_tokens = [
-		'FREETOKEN',
+        'FREETOKEN',
         'JIRA_TOKEN1',
         'JIRA_TOKEN2',
         'JIRA_TOKEN3',
